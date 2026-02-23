@@ -34,12 +34,38 @@ Antes de começar, certifique-se de ter instalado:
 ### 🚀 Como Executar o Projeto
 
 1️⃣ **Clone o Repositório**
-```bash
+bash
 git clone <url-do-seu-repositorio>
 cd cardapio-api
 2️⃣ Build do ProjetoBashmvn clean install
 3️⃣ Executar a AplicaçãoBashmvn spring-boot:run
-4️⃣ Verificar se está rodandoA aplicação estará disponível em:URL Base: http://localhost:8080🔑 Endpoints Principais📦 ProdutosMétodoEndpointDescriçãoGET/produtosLista todos os produtos cadastradosPOST/produtosCadastrar novo produto no cardápio📝 PedidosMétodoEndpointDescriçãoPOST/pedidosCriar um novo pedido (Mesa + Cliente + Itens)GET/pedidos/listarTodosListar todos os pedidos com detalhes e totaisPATCH/pedidos/{id}/statusAtualizar status do pedido (via RequestParam novoStatus)📌 Ciclo de Vida do PedidoO sistema utiliza os seguintes estados para garantir a organização do atendimento:PENDENTE: Pedido recém-criado, aguardando início da produção.PREPARANDO: O pedido já está sendo manipulado pela cozinha.PRONTO: Prato finalizado, aguardando o garçom para entrega.ENTREGUE: O cliente já recebeu o produto na mesa.FINALIZADO: Conta paga e mesa liberada no sistema.CANCELADO: Pedido anulado (interrompe o fluxo).💡 Exemplo de Requisição (POST /pedidos)JSON{
+4️⃣ Verificar se está rodandoA aplicação estará disponível em:
+URL Base: http://localhost:8080
+
+###n🔑 Endpoints Principais
+
+📦 **Produtos**
+Método,Endpoint,Descrição
+GET,/produtos,Lista todos os produtos cadastrados
+POST,/produtos,Cadastrar novo produto no cardápio
+
+📝 **Pedidos**
+Método,Endpoint,Descrição
+POST,/pedidos,Criar um novo pedido (Mesa + Cliente + Itens)
+GET,/pedidos/listarTodos,Listar todos os pedidos com detalhes e totais
+PATCH,/pedidos/{id}/status,Atualizar status do pedido (via RequestParam novoStatus)
+
+### 📌 Ciclo de Vida do Pedido
+O sistema utiliza os seguintes estados para garantir a organização do atendimento:
+**PENDENTE:** Pedido recém-criado, aguardando início da produção.
+**PREPARANDO:** O pedido já está sendo manipulado pela cozinha.
+**PRONTO:** Prato finalizado, aguardando o garçom para entrega.
+**ENTREGUE:** O cliente já recebeu o produto na mesa.
+**FINALIZADO:** Conta paga e mesa liberada no sistema.
+**CANCELADO:** Pedido anulado (interrompe o fluxo).
+
+### 💡 Exemplo de Requisição (POST /pedidos)JSON
+{
     "mesa": 5,
     "nomeCliente": "Felipe Lee",
     "itens": [
@@ -55,11 +81,18 @@ cd cardapio-api
         }
     ]
 }
-📖 Estrutura do ProjetoPlaintextsrc/main/java/com/seuprojeto/cardapio/
-├── controller/    # Endpoints da API
-├── dto/           # Request e Response Objects
-├── entity/        # Modelos de dados (Banco)
-├── repository/    # Interfaces de comunicação com o banco
-├── service/       # Regras de negócio e cálculos
-└── enums/         # Definições de Status do Pedido
-📝 LicençaEste projeto foi desenvolvido para fins de portfólio acadêmico e profissional.Desenvolvido por Anderson Cardim - 2025
+
+###📖 Estrutura do Projeto
+
+src/main/java/com/seuprojeto/cardapio/
+├── **controller/**    # Endpoints da API
+├── **dto/**           # Request e Response Objects
+├── **entity/**        # Modelos de dados (Banco)
+├── **repository/**    # Interfaces de comunicação com o banco
+├── **service/**       # Regras de negócio e cálculos
+└── **enums/**         # Definições de Status do Pedido
+
+📝 Licença
+Este projeto foi desenvolvido para fins de portfólio acadêmico e profissional.
+
+Desenvolvido por Anderson Cardim - 2025
