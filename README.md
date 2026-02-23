@@ -82,17 +82,18 @@ O sistema utiliza os seguintes estados para garantir a organização do atendime
     ]
 }
 
-###📖 Estrutura do Projeto
+### 📖 Estrutura do Projeto
 
 src/main/java/com/seuprojeto/cardapio/
-├── **controller/**    # Endpoints da API
-├── **dto/**           # Request e Response Objects
-├── **entity/**        # Modelos de dados (Banco)
-├── **repository/**    # Interfaces de comunicação com o banco
-├── **service/**       # Regras de negócio e cálculos
-└── **enums/**         # Definições de Status do Pedido
 
-📝 Licença
+ **controller/**    # Endpoints da API
+ **dto/**           # Request e Response Objects
+ **entity/**        # Modelos de dados (Banco)
+ **repository/**    # Interfaces de comunicação com o banco
+ **service/**       # Regras de negócio e cálculos
+ **enums/**         # Definições de Status do Pedido
+
+### 📝 Licença
 Este projeto foi desenvolvido para fins de portfólio acadêmico e profissional.
 
 Desenvolvido por Anderson Cardim - 2025
